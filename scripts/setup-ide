@@ -5,7 +5,11 @@ set -eu
 brew cask install webstorm
 
 pushd ~/workspace
-    git clone https://github.com/pivotal/pivotal_ide_prefs
-    cd pivotal_ide_prefs/cli
+    if [ ! -d ./pivotal_ide_prefs ]; then
+        git clone https://github.com/pivotal/pivotal_ide_prefs
+    fi
+    cd pivotal_ide_prefs
+    git pull
+    cd cli
     bin/ide_prefs --ide=webstorm install
 popd
