@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu
+
+brew tap git-duet/tap
+brew install git-duet
+
+cat <<-EOF > ~/.git-authors
+authors:
+  ch: Christa Hartsock
+  tw: Tamara Woodson
+  kw: Kenny Wang
+email_addresses:
+  ch: pivotal-shyp@googlegroups.com
+  tw: pivotal-shyp@googlegroups.com
+  kw: pivotal-shyp@googlegroups.com
+EOF

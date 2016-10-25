@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+yes | ~/.bash_it/install.sh
+. ~/.bash_profile
+
+brew install fasd
+
+bash-it enable plugin git
+bash-it enable plugin fasd

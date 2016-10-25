@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eu
+
+brew cask install webstorm
+
+pushd ~/workspace
+    git clone https://github.com/pivotal/pivotal_ide_prefs
+    cd pivotal_ide_prefs/cli
+    bin/ide_prefs --ide=webstorm install
+popd
